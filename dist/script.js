@@ -370,7 +370,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.animateOverTime = functi
     if (timeElapsed < dur) {
       requestAnimationFrame(_animateOverTime);
     } else {
-      if (typeof fin === "function") {
+      if (typeof fin === 'function') {
         fin();
       }
     }
@@ -379,7 +379,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.animateOverTime = functi
 };
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeIn = function (dur, display, fin) {
   for (let i = 0; i < this.length; i++) {
-    this[i].style.display = display || "block";
+    this[i].style.display = display || 'block';
     const _fadeIn = complection => {
       this[i].style.opacity = complection;
     };
@@ -393,7 +393,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeOut = function (dur,
     const _fadeOut = complection => {
       this[i].style.opacity = 1 - complection;
       if (complection === 1) {
-        this[i].style.display = display || "none";
+        this[i].style.display = 'none';
       }
     };
     const ani = this.animateOverTime(dur, _fadeOut, fin);
@@ -457,18 +457,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("button").on('click', function () {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("div").eq(1).toggleClass("active");
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("#first").on("click", () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("div").eq(1).fadeOut(800);
 });
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("div").click(function () {
-  console.log(Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(this).index());
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("[data-count='second']").on("click", () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("div").eq(2).fadeOut(800);
 });
-console.log(Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("button").html());
-
-// console.log($("div").eq(2).find(".some"));
-
-// console.log($(".some").closest(".findme"));
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("button").fadeIn(1800);
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])("button").eq(2).on("click", () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(".w-500").fadeOut(800);
+});
 
 /***/ })
 
